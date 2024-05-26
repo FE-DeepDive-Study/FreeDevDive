@@ -118,3 +118,6 @@ https://kubernetes.io/docs/concepts/workloads/autoscaling/
 - **Resource Requests and Limits**: 파드가 필요로 하는 리소스를 지정하여, 해당 리소스를 제공할 수 있는 노드에만 배치.
 - **Priority Classes**: 파드의 우선 순위를 설정하여 자원이 부족할 때 어떤 파드가 먼저 스케줄링되거나 축출될지 결정.
 - **Node Name**: 파드를 특정 노드에 직접 배치할 수 있도록 노드 이름 지정.
+
+## 참고하세요
+https://velog.io/@airoasis/Kubernetes-Autoscaling

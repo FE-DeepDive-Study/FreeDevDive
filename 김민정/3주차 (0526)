@@ -1,0 +1,55 @@
+# 리액트 작동 구조 알아보기
+
+![스크린샷 2024-05-26 오전 11.54.46.png](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%8B%E1%85%A1%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5%202b0d3cc7aeeb4956aeaae9672dfb8eb5/%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7_2024-05-26_%25EC%2598%25A4%25EC%25A0%2584_11.54.46.png)
+
+## index.js
+
+- npm start 시 제일 먼저 구동하는 파일
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App'; // 여기에서 App.js에 대한 정보를 import해옴 (.js가 생략됨)
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+    {/* <!-- 여기가 앱을 실행하는 구간 --> */}
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+
+- 여러가지 전역적인 설정들을 하는 공간
+
+## App.js
+
+- App.js에서 html 작업을 한 뒤
+
+```jsx
+import './App.css'; // 같은 디렉토리 내의 App.css에서 import
+import { useState } from 'react';
+
+function App() {
+
+  return (
+    <div className="App">
+        <h1>Test Text</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## root?
+
+- root를 통해 렌더링 진행 (index.js 참고)
+- public > index.html 에 존재
